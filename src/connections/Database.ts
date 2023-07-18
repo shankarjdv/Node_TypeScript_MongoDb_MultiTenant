@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
 
-const connectToDatabase = (databaseUrl: string): mongoose.Connection => {
+const connectToDatabase = (databaseUrl: string, dbName: string): mongoose.Connection => {
   const connection = mongoose.createConnection(databaseUrl, {
+    dbName: dbName,
     connectTimeoutMS: 30000,
   });
 

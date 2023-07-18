@@ -45,7 +45,7 @@ export const createUserController2 = async (req: CustomRequest, res: Response) =
     if(tenant == "dc"){
       connection = req.app.locals.connection1; // Get connection from app.locals
     }else{
-      connection = req.app.locals.connection2; // Get connection from app.locals
+      connection = req.app.locals.connection1; // Get connection from app.locals
     }
 
     // Register the User schema if it hasn't been registered
