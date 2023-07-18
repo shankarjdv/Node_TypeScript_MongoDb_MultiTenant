@@ -2,6 +2,7 @@
 import express, { Request, Response } from "express";
 import router from "./routes/userRoutes";
 import connectToDatabase from "./connections/Database";
+import config from './config/config';
 
 const app = express();
 const port = 3000;
@@ -18,10 +19,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 // Database connection URLs (replace with your database details)
-// const databaseUrl2 = 'mongodb://localhost:27017/database2';
-const databaseUrl1 =
-  "mongodb://mddev:LF0bKggxTV6NNrdoazk1hesSWJ3k2MW3z01lyHR8FvHPKEQolVbenq1oex6ikDrYQ51rCj1XrwKpACDbz6zsxA==@mddev.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@mddev@";
-// const databaseUrl2 = 'mongodb://localhost:27017/database1';
+const databaseUrl1 = config.dbConnectionString;
 
 const connection1 = connectToDatabase(databaseUrl1, "tenant1");
 const connection2 = connectToDatabase(databaseUrl1, "tenant2");
