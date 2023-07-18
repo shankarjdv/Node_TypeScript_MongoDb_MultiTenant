@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema, Document } from "mongoose";
 
 export interface UserDocument extends Document {
   name: string;
@@ -12,6 +12,6 @@ export const userSchema: Schema = new Schema({
   // Define additional fields
 });
 
-export const UserModel = mongoose.model<UserDocument>('User', userSchema); // Export the model
+export const UserModel = mongoose.model<UserDocument>("User", userSchema); // Export the model
 
 export default userSchema; // Export the schema
